@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:wght@700&display=swap');
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #1a1c1d 0%, #414345 100%);
+  --accent-blue: #00e5ff; /* Softened for the pastel background */
+  --smooth-curve: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(to right, #9fb7f3 0%, #dde0f8 100%);
+  font-family:'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 14px; /* space between card and hint */
+}
+
+/* 1. THE FLOATING CONTAINER */
+.card {
+  width: 380px;
+  height: 220px;
+  perspective: 1500px;
+  /* Subtle 'breathing' animation to signal it's interactable */
+  animation: float 4s ease-in-out infinite;
+}
+
+
+.card:hover {
+  animation-play-state: paused;
+}
+
+.flip-btn{
+  margin-top:12px;
+  background:none;
+  border:none;
+  font-size:0.85rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.75;
+  cursor:pointer;
+  font-family:'Inter', sans-serif;
+  color: rgb(81, 81, 81);
+}
+
+.flip-btn:hover{
+  opacity:1;
+}
+
+/* 2. THE FLIP MECHANISM */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s var(--smooth-curve), box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 16px;
+  /* Colored shadow to match your background gradient */
+  box-shadow: 0 15px 35px rgba(108, 92, 231, 0.15);
+}
+
+.card:hover .card-inner {
+  transform: rotateX(180deg) scale(1.05);
+  /* Deeper shadow when "lifted" */
+  box-shadow: 0 40px 70px rgba(108, 92, 231, 0.25);
+}
+
+/* --- FLIP RULES --- */
+
+/* Desktop hover stays */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card-inner {
+    transform: rotateX(180deg) scale(1.05);
+    box-shadow: 0 40px 70px rgba(108, 92, 231, 0.25);
+  }
+}
+
+/* Touch devices: flip when class is toggled */
+.card.is-flipped .card-inner {
+  transform: rotateX(180deg) scale(1.05);
+  box-shadow: 0 40px 70px rgba(108, 92, 231, 0.25);
+}
+
+
+/* Stop relying on :active (remove or ignore your old block) */
+/* @media screen and (max-width: 800px) { .card:active .card-inner { ... } } */
+.tap-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 1;
+  color: rgb(71, 71, 71);
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Show hint only on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .tap-hint { display: none; }
+}
+
+/* 3. SHARED SIDE STYLES */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+/* 4. FRONT STYLING */
+.card-front {
+  background: var(--primary-gradient);
+  color: white;
+  transform-style: preserve-3d;
+}
+
+.card-front h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+  transform: translateZ(60px); /* Parallax lift */
+}
+
+.card-front a, .card-front p {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1.5px;
+  margin: 0;
+  transform: translateZ(40px); /* Parallax lift */
+}
+
+/* 5. BACK STYLING (The "Premium Paper" Look) */
+.card-back {
+   background: var(--primary-gradient);
+  color: #fff;
+  transform: rotateX(180deg);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  align-items: flex-start;
+  
+  /* INNER SHADOW: Gives the paper 'weight' and soft edges */
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.02), 
+              inset 0 0 2px rgba(0, 0, 0, 0.05);
+  
+  /* Allows child elements to have Z-depth */
+  transform-style: preserve-3d;
+}
+
+/* Blue Accent Line - Now with a tiny shadow */
+.card-back::before {
+  content: '';
+  width: 40px;
+  height: 4px;
+  background: var(--accent-blue);
+  margin-bottom: 20px;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(108, 92, 231, 0.2);
+  transform: translateZ(20px); /* Lifts the line off the card */
+}
+a {
+    text-decoration: none;
+    color: silver;
+}
+h3 {
+    font-weight: 800;
+    font-size: 1.2em;
+    margin: 0;
+    padding-top: 0;
+    color: white;
+}
+/*footer brag*/
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  justify-content:center;
+  align-items:center;
+}
+
+.footer-credit{
+  position: fixed;
+  bottom: 10px;
+  opacity: 0.85;
+  color: gray;
+  font-size: 0.85rem;
+} 
+/*footer brag*/
+
+.card-back a {
+  font-size: 0.85rem;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 400;
+
+  
+  /* LIFTED TEXT: Creates a 3D effect on the back too */
+  transform: translateZ(30px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+/* Subtle hover effect for the individual contact lines */
+.card-back a:hover {
+  transform: translateZ(45px) translateX(5px);
+  color: var(--accent-blue);
+  cursor: pointer;
+}
+
+.card-back i {
+  color: var(--accent-blue);
+  width: 16px;
+  filter: drop-shadow(0 2px 3px rgba(108, 92, 231, 0.2));
+}
+
+/* 6. ANIMATIONS */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}

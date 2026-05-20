@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect | Brandon Lutts</title>
+  <meta name="description" content="A custom linktree to the business of brandon lutts">
+  <link rel="icon" href="assets/logo/fav_icon_Lutts.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/business-card.css">
+  <!--open graph card-->
+  <!-- Open Graph -->
+<meta property="og:title" content="Brandon Lutts — Web Developer">
+<meta property="og:description" content="Custom Websites Built to Last.">
+<meta property="og:image" content="https://brandonlutts.com/assets/og-card.png">
+<meta property="og:url" content="https://brandonlutts.com/connect">
+<meta property="og:type" content="website">
+
+<!-- Optional but recommended -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Brandon Lutts">
+
+<!-- Twitter (also used by iMessage sometimes) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brandon Lutts — Web Developer">
+<meta name="twitter:description" content="Custom Websites Built to Last.">
+<meta name="twitter:image" content="https://brandonlutts.com/assets/og-card.png">
+   <!--open graph card-->
+</head>
+
+<body>
+
+  <div class="card-stack">
+
+    <div class="card" id="bizCard">
+      <div class="card-inner">
+
+        <div class="card-front">
+          <h2>Brandon Lütts</h2>
+          <p>Web Developer</p>
+        </div>
+
+        <div class="card-back">
+          <h3 style="padding-left: -5px !important;">Custom Websites Built to Last</h3>
+
+          <a href="mailto:luttsbn@gmail.com">luttsbn@gmail.com</a>
+          <a href="https://brandonlutts.com" target="_blank" rel="noopener">brandonlutts.com</a>
+          <a href="tel:+15137061604">(513) 706-1604</a>
+          <a href="https://www.linkedin.com/in/brandonluttsartist" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button id="flipCardBtn" class="flip-btn">Tap to flip</button>
+      <button id="saveContactBtn" class="flip-btn">Save contact</button>
+      <button id="shareBtn" class="flip-btn">Share</button>
+    </div>
+
+    <span class="footer-credit">&copy; Built &amp; Designed By Brandon Lütts</span>
+  </div>
+
+  <script>
+  (() => {
+    const card = document.getElementById('bizCard');
+    const flipBtn = document.getElementById('flipCardBtn');
+    const saveBtn = document.getElementById('saveContactBtn');
+    const shareBtn = document.getElementById('shareBtn');
+    if (!card || !flipBtn || !saveBtn || !shareBtn) return;
+
+    const isTouch = window.matchMedia &&
+      window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+    function setFlipped(next){
+      card.classList.toggle('is-flipped', next);
+      flipBtn.textContent = next ? 'Flip back' : 'Tap to flip';
+      card.setAttribute('aria-pressed', next ? 'true' : 'false');
+    }
+
+    function toggleFlipped(){
+      setFlipped(!card.classList.contains('is-flipped'));
+    }
+
+    // Flip button works everywhere
+    flipBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleFlipped();
+    });
+
+    // Optional: tap card area on touch devices (but NOT links)
+    if (isTouch) {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        toggleFlipped();
+      });
+    }
+
+    // ---------- SAVE CONTACT (.VCF) ----------
+    // Tip: keep this "clean" and minimal. Phones will prompt to add.
+    saveBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const vcf =
+`BEGIN:VCARD
+VERSION:3.0
+N:Lutts;Brandon;;;
+FN:Brandon Lutts
+TITLE:Web Developer
+ORG:Brandon Lutts
+TEL;TYPE=CELL:+1-513-706-1604
+EMAIL;TYPE=INTERNET:luttsbn@gmail.com
+URL:https://brandonlutts.com
+NOTE:Custom websites built to last.
+END:VCARD`;
+
+      const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Brandon-Lutts.vcf';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
+
+    // ---------- SHARE ----------
+    shareBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const shareData = {
+        title: 'Brandon Lutts — Web Developer',
+        text: 'Custom websites built to last.',
+        url: window.location.href
+      };
+
+      // Native share sheet on mobile where supported
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (err) {
+          // user cancelled or share failed — fall through to copy
+        }
+      }
+
+      // Fallback: copy link
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const old = shareBtn.textContent;
+        shareBtn.textContent = 'Copied link';
+        setTimeout(() => shareBtn.textContent = old, 1200);
+      } catch (err) {
+        // Last-resort fallback: prompt
+        window.prompt('Copy this link:', window.location.href);
+      }
+    });
+
+  })();
+  </script>
+
+</body>
+</html>

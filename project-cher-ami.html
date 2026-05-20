@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cher Ami Restoration Journal Boat Project — Project Detail</title>
+    <<meta name="description" content="Cher Ami Boat Restoration Journal — a custom-designed website featuring structured content architecture, responsive UI, and self-hosted form systems.">
+
+    <link rel="icon" href="assets/logo/fav_icon_Lutts.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Cher Ami Boat Restoration Journal Website",
+  "url": "https://cherami.brandonlutts.com",
+  "creator": {
+    "@type": "Person",
+    "name": "Brandon Lütts",
+    "url": "https://brandonlutts.com"
+  },
+  "description": "A custom-designed restoration journal website documenting the Cher Ami boat project, featuring responsive UI, structured content architecture, and self-hosted form systems.",
+  "keywords": [
+    "web design",
+    "portfolio project",
+    "custom website",
+    "responsive design",
+    "restoration journal"
+  ]
+}
+</script>
+  </head>
+
+<!--navigation-->
+  <body class="hud-bg">
+    
+    <div class="header">
+      <!-- Mobile Nav Overlay -->
+      <div class="overlay" id="overlay"></div>
+
+      <!-- Navigation -->
+      <div class="navContainer">
+        <div class="navBar">
+          <div class="menu-icon" id="menu-icon" aria-label="Open menu" role="button" tabindex="0">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+
+          <!-- Mobile Logo -->
+          <div class="mobile-logo" id="mobile-logo">
+            <a href="index.html"><img src="assets/logo/webdev_logo_lutts.svg" alt="Brandon Lütts logo"></a>
+          </div>
+
+          <!-- Desktop Logo -->
+          <div class="navLogo">
+            <a href="index.html"><img src="assets/logo/slash_logo_desktop.svg" alt="Brandon Lütts logo"></a>
+          </div>
+
+          <ul class="navlist" id="nav-menu">
+            <li class="links"><a href="index.html">Home</a></li>
+            <li class="links"><a href="./projects.html">Projects</a></li>
+            <li class="links"><a href="./services.html">Services</a></li>
+            <li class="links"><a href="./about.html">About</a></li>
+            <li class="links"><a href="./about.html#contact">Contact</a></li>
+            <li class="links"><a href="./faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="height:3px;background:#23262c;position:relative;overflow:hidden">
+        <div
+          id="progress"
+          style="position:absolute;inset:0;background:var(--accent);transform-origin:left center;transform:scaleX(0)"
+        ></div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <div class="container panel" style="padding:34px">
+          <div class="kicker">Project • Web</div>
+          <h1 class="h1">Cher Ami Boat Restoration Journal</h1>
+          <p style="max-width:70ch;color:var(--muted)">
+           Cher Ami is a bespoke website developed to serve as both a narrative hub and technical showcase for an ongoing restoration project. Rather than relying on page builders or external SaaS form platforms, the site was architected with a custom frontend and a unified PHP backend to maintain full control over performance, styling, and long-term scalability. <br><br>
+
+The interface follows a deliberate HUD-inspired design language, utilizing structured panels, motion cues, and clean typography to create a cohesive visual identity that aligns with the project’s story and technical tone. Special attention was given to interaction design, ensuring smooth, non-disruptive form submissions using AJAX so users remain on-page with real-time status feedback. <br><br>
+
+On the backend, a custom mail handling system was implemented to support multiple forms (FAQ, contact, services, and inquiries) through a single endpoint. This includes multipart HTML email formatting, branded confirmation emails, honeypot spam protection, and rate limiting — all designed to function reliably on standard shared hosting without recurring third-party costs. <br><br>
+
+The result is a performance-focused, visually distinctive, and fully self-contained web experience that reflects a commitment to craftsmanship, technical integrity, and long-term maintainability.. </p>
+
+          <div class="hr"></div>
+
+          <div class="grid-2">
+            <!-- Left column: quick stats -->
+            <div>
+              <div class="kicker">Quick Stats</div>
+              <div style="margin-top:12px;display:grid;gap:.6rem;font-size:.95rem">
+                <div>
+                  <span class="tag">Role</span>
+                  <div>Full-stack design and development, including UI/UX design, frontend implementation, backend PHP architecture, branded email system, and deployment optimization on shared hosting infrastructure. </div>
+                </div>
+                <div>
+                  <span class="tag">Stack</span>
+                  <div>HTML, CSS, Tailwind-CSS JavaScript, PHP, JSON-LD, schema </div>
+                </div>
+                <div>
+                  <span class="tag">Focus</span>
+                  <div>Mobile Layout, interactive UI, php contact forms, animations</div>
+                </div>
+                <div>
+                  <span class="tag">Status</span>
+                  <div>Live / growing</div>
+                </div>
+              </div>
+
+              <div style="margin-top:16px;display:flex;gap:.5rem;flex-wrap:wrap">
+                <a class="btn" href="https://bluegrassbowl.com/" target="_blank" rel="noopener">
+                  Open live site
+                </a>
+                <a class="btn btn-ghost" href="./index.html">Back to home</a>
+              </div>
+            </div>
+
+            <!-- Right column: visual / preview -->
+            <div class="panel" style="padding:16px;min-height:220px;display:grid;place-items:center">
+              <div class="kicker">Preview</div>
+              <div class="hr"></div>
+              <div
+                style="
+                  width:100%;
+                  aspect-ratio:16/9;
+                  border-radius:12px;
+                  border:1px solid #2a2f36;
+                  background:
+                    black;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  font-family:'JetBrains Mono', ui-monospace;
+                  font-size:.85rem;
+                  color:var(--muted);
+                  text-align:center;
+                  padding:1rem;
+                "
+              >
+                <img src="assets/static_preview/cherami_1.png" style="width: 100%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILS SECTION -->
+      <section class="section">
+        <div class="container panel" style="padding:34px">
+          <div class="grid-2">
+            <!-- Left: what / why -->
+            <div>
+              <h2 class="h2">What I built</h2>
+              <div class="hr"></div>
+              <p style="color:var(--muted);max-width:60ch">
+               Custom-designed narrative website featuring a HUD-inspired interface, AJAX form system, and branded PHP email pipeline. Built from scratch for performance, maintainability, and full creative control without third-party form services.
+              </p>
+
+              <ul style="color:var(--muted);padding-left:1.2rem;font-size:.95rem">
+                <li>decent weight design many features, a time capsule or distant memory just out of reach</li>
+                Fully custom UI/UX with HUD-inspired design system
+
+<li>Unified PHP form handler for multiple site entry points </li>
+
+<li>AJAX form submissions (no page reload UX) </li>
+
+<li>Branded HTML email confirmations </li>
+
+<li>Spam protection via honeypot + validation </li>
+
+<li>Performance-first, framework-light architecture </li>
+
+<li>Hosted on standard infrastructure (no SaaS dependencies) </li>
+
+<li>Responsive layout optimized for desktop and mobile </li>
+
+<li>Narrative-driven content structure aligned with project storytelling </li>
+              </ul>
+            </div>
+
+            <!-- Right: tech + features -->
+            <div>
+              <h2 class="h2">Under the hood</h2>
+              <div class="hr"></div>
+              <ul style="color:var(--muted);padding-left:1.2rem;font-size:.95rem">
+                <li>Frontend: HTML5, CSS3 (custom design system), Vanilla JavaScript (AJAX & UX logic)</li>
+<li>Backend: PHP (custom unified form handler & email pipeline)</li>
+<li>Hosting: IONOS (shared hosting optimized deployment)</li>
+<li>Email System: Native mail() with multipart HTML templates & confirmation workflow </li>
+<li>Security: Honeypot spam filtering, input sanitization, rate limiting </li>
+              </ul>
+
+              <h3 style="margin-top:1.5rem;font-weight:700">Color palette</h3>
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.4rem">
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background: #000;;border:1px solid #000000"></span>
+                  <span style="font-size:.8rem;color:var(--muted)"><div id="#FCF8D2"></div> #000 (background)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background:#FCF8D2;border:1px solid #ffffff"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#FCF8D2 (accent)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background: #D6FBFFCC;;border:1px solid #ffffff"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#D6FBFFCC (highlight)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background: #fff;;border:1px solid #FFF"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#FFF ( Ink / body)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+    <div class="footer">
+      <div class="container contain_footer footer-grid">
+        <div class="footer-col">
+          <div class="footer-kicker">brandonlutts.com</div>
+          <div class="footer-pill-row">
+            <span class="footer-pill">Cincinnati, OH</span>
+            <span class="footer-pill">JavaScript-first</span>
+            <span class="footer-pill">HUD / UI prototypes</span>
+          </div>
+          <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>Currently taking select projects.</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-label">Contact</div>
+          <div class="footer-contact">
+            <span>Phone:</span>
+            <a href="tel:+15137061604">(513) 706-1604</a>
+            <button class="btn btn-ghost" data-copy="+15137061604">copy</button>
+          </div>
+          <div class="footer-contact">
+            <span>Email:</span>
+            <a href="mailto:luttsbn@gmail.com">luttsbn@gmail.com</a>
+            <button class="btn btn-ghost" data-copy="luttsbn@gmail.com">copy</button>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-label">Shortcuts</div>
+          <div class="footer-links">
+            <a href="./projects.html">Projects</a>
+            <a href="./services.html">Services</a>
+            <a href="./about.html#about">About</a>
+            <a href="./about.html#contact">Contact</a>
+            <a href="./faq.html">FAQ</a>
+          </div>
+          <div class="footer-mini">
+            © <span id="y"></span> Brandon Lütts
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    const yearElement = document.getElementById('y');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  });
+    </script>
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>

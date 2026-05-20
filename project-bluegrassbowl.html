@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bluegrass Bowl Tecmo Tournament — Project Detail</title>
+      <meta name="description" content="Bluegrass Bowl Tecmo Tournament website featuring structured navigation, event-driven UX, and performance-focused JavaScript architecture.">
+
+    <link rel="icon" href="assets/logo/fav_icon_Lutts.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="./assets/styles.css">
+  </head>
+
+  <body class="hud-bg">
+    <div class="header">
+      <div class="container nav">
+        <a class="brand" href="./index.html">
+          <img src="assets/logo/webdev_logo_lutts.svg" alt="Brandon Lutts logo">
+          <span>brandon<span style="color:var(--accent)">lutts</span>.com</span>
+        </a>
+        <button id="menuBtn" class="btn btn-ghost" aria-expanded="false">Menu</button>
+        <div class="links">
+          <a href="./projects.html">Projects</a>
+          <a href="./services.html">Services</a>
+          <a href="./about.html">About</a>
+          <a href="./about.html#contact">Contact</a>
+          <a href="./faq.html">FAQ</a>
+        </div>
+      </div>
+
+      <div id="mobileLinks" class="container">
+        <a href="./projects.html">Projects</a>
+        <a href="./services.html">Services</a>
+        <a href="./about.html">About</a>
+        <a href="./about.html#contact">Contact</a>
+        <a href="./faq.html">FAQ</a>
+      </div>
+
+      <div style="height:3px;background:#23262c;position:relative;overflow:hidden">
+        <div
+          id="progress"
+          style="position:absolute;inset:0;background:var(--accent);transform-origin:left center;transform:scaleX(0)"
+        ></div>
+      </div>
+    </div>
+
+    <main>
+      <section class="section">
+        <div class="container panel" style="padding:34px">
+          <div class="kicker">Project • Web</div>
+          <h1 class="h1">Bluegrass Bowl Tecmo Tournament</h1>
+          <p style="max-width:70ch;color:var(--muted)">
+            A focused event site for a Tecmo Super Bowl tournament hosted in the Bluegrass region.
+            The goal: make it easy for players to understand the format, register, and get excited
+            about the event — while also showing off a bit of NES-era charm.
+          </p>
+
+          <div class="hr"></div>
+
+          <div class="grid-2">
+            <!-- Left column: quick stats -->
+            <div>
+              <div class="kicker">Quick Stats</div>
+              <div style="margin-top:12px;display:grid;gap:.6rem;font-size:.95rem">
+                <div>
+                  <span class="tag">Role</span>
+                  <div>Design · Frontend · Light backend</div>
+                </div>
+                <div>
+                  <span class="tag">Stack</span>
+                  <div>HTML, CSS, JavaScript, JSON-LD</div>
+                </div>
+                <div>
+                  <span class="tag">Focus</span>
+                  <div>Event UX, bracket info, NES nostalgia</div>
+                </div>
+                <div>
+                  <span class="tag">Status</span>
+                  <div>Live / evolving</div>
+                </div>
+              </div>
+
+              <div style="margin-top:16px;display:flex;gap:.5rem;flex-wrap:wrap">
+                <a class="btn" href="https://bluegrassbowl.com/" target="_blank" rel="noopener">
+                  Open live site
+                </a>
+                <a class="btn btn-ghost" href="./index.html">Back to home</a>
+              </div>
+            </div>
+
+            <!-- Right column: visual / preview -->
+            <div class="panel" style="padding:16px;min-height:220px;display:grid;place-items:center">
+              <div class="kicker">Preview</div>
+              <div class="hr"></div>
+              <div
+                style="
+                  width:100%;
+                  aspect-ratio:16/9;
+                  border-radius:12px;
+                  border:1px solid #2a2f36;
+                  background:
+                    black;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  font-family:'JetBrains Mono', ui-monospace;
+                  font-size:.85rem;
+                  color:var(--muted);
+                  text-align:center;
+                  padding:1rem;
+                "
+              >
+                <img src="assets/static_preview/bluegrass_static.png" style="width: 100%;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILS SECTION -->
+      <section class="section">
+        <div class="container panel" style="padding:34px">
+          <div class="grid-2">
+            <!-- Left: what / why -->
+            <div>
+              <h2 class="h2">What I built</h2>
+              <div class="hr"></div>
+              <p style="color:var(--muted);max-width:60ch">
+                The site gives players everything they need to know about the tournament:
+                format, location, rules, and how to sign up. The design leans into a
+                Tecmo-style vibe while still being readable and mobile-friendly.
+              </p>
+
+              <ul style="color:var(--muted);padding-left:1.2rem;font-size:.95rem">
+                <li>Landing page with a clear call-to-action for registration.</li>
+                <li>Sections for rules, schedule, and FAQs.</li>
+                <li>Space reserved for standings / bracketing and results.</li>
+                <li>Copy tuned to the Tecmo community: casual, direct, and hype-friendly.</li>
+              </ul>
+            </div>
+
+            <!-- Right: tech + features -->
+            <div>
+              <h2 class="h2">Under the hood</h2>
+              <div class="hr"></div>
+              <ul style="color:var(--muted);padding-left:1.2rem;font-size:.95rem">
+                <li>Static HTML/CSS/JS for fast loads and easy hosting.</li>
+                <li>Responsive layout tuned for phone-in-hand checking on event day.</li>
+                <li>JSON-LD event markup to help search engines understand the tournament.</li>
+                <li>Reusable components and tokens so future years can re-use the structure.</li>
+              </ul>
+
+              <h3 style="margin-top:1.5rem;font-weight:700">Color palette</h3>
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.4rem">
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background:#071220;border:1px solid #1b273a"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#071220 (background)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background:#ffd028;border:1px solid #aa8a10"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#FFD028 (accent)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background:#4de3ff;border:1px solid #1a8da0"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#4DE3FF (highlight)</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:.4rem">
+                  <span style="width:18px;height:18px;border-radius:4px;background:#1ea24b;border:1px solid #0c5f2b"></span>
+                  <span style="font-size:.8rem;color:var(--muted)">#1EA24B (field / success)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    
+    <div class="footer">
+      <div class="container contain_footer footer-grid">
+        <div class="footer-col">
+          <div class="footer-kicker">brandonlutts.com</div>
+          <div class="footer-pill-row">
+            <span class="footer-pill">Cincinnati, OH</span>
+            <span class="footer-pill">JavaScript-first</span>
+            <span class="footer-pill">HUD / UI prototypes</span>
+          </div>
+          <div class="footer-status">
+            <span class="status-dot"></span>
+            <span>Currently taking select projects.</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-label">Contact</div>
+          <div class="footer-contact">
+            <span>Phone:</span>
+            <a href="tel:+15137061604">(513) 706-1604</a>
+            <button class="btn btn-ghost" data-copy="+15137061604">copy</button>
+          </div>
+          <div class="footer-contact">
+            <span>Email:</span>
+            <a href="mailto:luttsbn@gmail.com">luttsbn@gmail.com</a>
+            <button class="btn btn-ghost" data-copy="luttsbn@gmail.com">copy</button>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-label">Shortcuts</div>
+          <div class="footer-links">
+            <a href="./projects.html">Projects</a>
+            <a href="./services.html">Services</a>
+            <a href="./about.html#about">About</a>
+            <a href="./about.html#contact">Contact</a>
+            <a href="./faq.html">FAQ</a>
+          </div>
+          <div class="footer-mini">
+            © <span id="y"></span> Brandon Lütts
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <script>
+            document.addEventListenerO, 'DOMContentLoaded', () => {
+    const yearElement = document.getElementById('y');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  };
+    </script>
+    <script src="./assets/app.js" defer></script>
+  </body>
+</html>
